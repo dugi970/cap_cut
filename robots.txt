@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dugi970.github.io/cap_cut/sitemap.xml
