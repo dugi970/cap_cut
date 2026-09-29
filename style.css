@@ -1,0 +1,564 @@
+/* ==============================
+   BASIC RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   BODY
+============================== */
+
+body {
+    background: #08080b;
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.container {
+    width: min(1200px, calc(100% - 32px));
+
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    padding: 80px 0 60px;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   BADGE
+============================== */
+
+.badge {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 14px;
+
+    border: 1px solid #292932;
+
+    border-radius: 50px;
+
+    background: #111116;
+
+    color: #a8a8b5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   MAIN TITLE
+============================== */
+
+h1 {
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    font-size: 58px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+/* Colored part of title */
+
+h1 span {
+    color: #a855f7;
+}
+
+
+/* ==============================
+   HERO TEXT
+============================== */
+
+.hero-text {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #9999a6;
+
+    font-size: 17px;
+}
+
+
+/* ==============================
+   STYLES SECTION
+============================== */
+
+.styles-section {
+    padding: 20px 0 80px;
+}
+
+
+.styles-section h2 {
+    margin-bottom: 5px;
+
+    font-size: 28px;
+}
+
+
+.section-description {
+    margin-bottom: 25px;
+
+    color: #777783;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   GRID
+============================== */
+
+.styles-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+/* ==============================
+   STYLE CARD
+============================== */
+
+.style-card {
+    min-height: 300px;
+
+    padding: 20px;
+
+    background: #111116;
+
+    border: 1px solid #24242d;
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.style-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #393944;
+}
+
+
+.style-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 17px;
+
+    line-height: 1.3;
+}
+
+/* ==============================
+   VIDEO PREVIEW
+============================== */
+
+.video-preview {
+    width: 100%;
+
+    aspect-ratio: 9 / 16;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #050507;
+}
+
+
+.video-preview video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+/* ==============================
+   TUTORIAL BUTTON
+============================== */
+
+.tutorial-button {
+    width: 100%;
+
+    padding: 11px 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.tutorial-button:hover {
+    background: #9d6df7;
+}
+
+
+.tutorial-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    padding: 35px 0;
+
+    border-top: 1px solid #1d1d24;
+
+    color: #686873;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 1000px) {
+
+    .styles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(100% - 22px, 500px);
+    }
+
+
+    .hero {
+        padding: 55px 0 40px;
+    }
+
+
+    h1 {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+
+    .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+}
+
+
+/* ==============================
+   SMALL PHONES
+============================== */
+
+@media (max-width: 420px) {
+
+    .styles-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==============================
+   TUTORIAL MODAL
+============================== */
+
+.tutorial-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Active modal */
+
+.tutorial-modal.show {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* ==============================
+   DARK OVERLAY
+============================== */
+
+.tutorial-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* ==============================
+   MODAL WINDOW
+============================== */
+
+.tutorial-window {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(950px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background: #111116;
+
+    border: 1px solid #292932;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6);
+
+    transform: translateY(20px) scale(0.97);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* Window animation */
+
+.tutorial-modal.show .tutorial-window {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==============================
+   CLOSE BUTTON
+============================== */
+
+.tutorial-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #24242d;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.tutorial-close:hover {
+    background: #35353f;
+
+    transform: rotate(90deg);
+}
+
+
+/* ==============================
+   TITLE
+============================== */
+
+.tutorial-window h2 {
+    padding-right: 45px;
+
+    margin-bottom: 5px;
+
+    font-size: 25px;
+}
+
+
+.tutorial-description {
+    margin-bottom: 22px;
+
+    color: #888894;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   TUTORIAL IMAGES
+============================== */
+
+.tutorial-images {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.tutorial-images img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 12px;
+
+    border: 1px solid #292932;
+
+    background: #08080b;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    .tutorial-modal {
+        padding: 10px;
+    }
+
+
+    .tutorial-window {
+        max-height: 94vh;
+
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .tutorial-window h2 {
+        font-size: 20px;
+    }
+
+
+    .tutorial-images {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+}
+
+/* ==============================
+   SEO CONTENT
+============================== */
+
+.seo-content {
+    max-width: 850px;
+    margin: 70px auto 0;
+}
+
+.seo-content h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.seo-content p {
+    margin-bottom: 30px;
+    color: #9999a6;
+    font-size: 16px;
+    line-height: 1.8;
+}
