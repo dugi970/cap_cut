@@ -203,6 +203,10 @@ function closeTutorial() {
    TUTORIAL BUTTONS
 ============================== */
 
+/* ==============================
+   TUTORIAL BUTTONS + SMARTLINK
+============================== */
+
 const tutorialButtons =
     document.querySelectorAll(".tutorial-button");
 
@@ -211,8 +215,26 @@ tutorialButtons.forEach(function(button) {
 
     button.addEventListener("click", function() {
 
+        /* Prevent multiple clicks */
+        if (button.disabled) {
+            return;
+        }
+
+        /* Disable immediately */
+        button.disabled = true;
+
         const id = button.dataset.id;
 
+
+        /* Open Smartlink in a new tab */
+        window.open(
+            "https://www.profitableratecpmnetwork.com/jmpuekf9r?key=e5a6e5db00a49a679388be6dd93b102b",
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+
+        /* Open the requested tutorial */
         openTutorial(id);
 
     });
