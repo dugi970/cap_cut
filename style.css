@@ -562,3 +562,47 @@ footer {
     font-size: 16px;
     line-height: 1.8;
 }
+
+
+/* ==============================
+   160x600 SIDE BANNER
+============================== */
+
+.side-banner-160 {
+    display: none;
+}
+
+
+/* Show only on wide desktop */
+
+@media (min-width: 1200px) {
+
+    .styles-section .container {
+        position: relative;
+    }
+
+    .side-banner-160 {
+        display: block;
+        position: absolute;
+
+        top: 120px;
+        right: -190px;
+
+        width: 160px;
+        height: 600px;
+
+        overflow: hidden;
+    }
+
+}
+
+
+/* Hide on tablets and phones */
+
+@media (max-width: 1199px) {
+
+    .side-banner-160 {
+        display: none;
+    }
+
+}
