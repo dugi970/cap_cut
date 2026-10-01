@@ -228,7 +228,7 @@ tutorialButtons.forEach(function(button) {
 
         /* Open Smartlink in a new tab */
         window.open(
-            "https://www.profitableratecpmnetwork.com/jmpuekf9r?key=e5a6e5db00a49a679388be6dd93b102b",
+            "https://example.com",
             "_blank",
             "noopener,noreferrer"
         );
